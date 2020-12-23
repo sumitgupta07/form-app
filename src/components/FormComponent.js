@@ -4,10 +4,10 @@ import {DROPDOWN, TEXT} from '../utils/constants';
 import {toCamelCase} from '../utils/helpers';
 
 const FormComponent = () => {
-  const [questions, setQuestions] = useState([]);
-  const [formValues, setFormValues] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [questions, setQuestions] = useState([]); // Questions fetched via rest api call
+  const [formValues, setFormValues] = useState({}); //FormValues to store values for dynamic form fields
+  const [loading, setLoading] = useState(true); //Loading flag to show loading spinner until form config is not downloaded
+  const [error, setError] = useState(false); //Error flag to show errors if some problem fetching config via rest api
 
   useEffect(() => {
     async function fetchData() {
